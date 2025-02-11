@@ -20,13 +20,13 @@ public class SpaceshipController : MonoBehaviour
     public GameObject GameOverScreen;
     private bool canMove = true;
     private bool canShoot = true;
-    // Start is called before the first frame update
+    
+    [SerializeField] SpaceShooterManager SpaceShooterManager;
     void Start()
     {
         storeHP = hitponts;
     }
 
-    // Update is called once per frame
     void Update()
     {
         textValue.text = score.ToString();
@@ -34,6 +34,7 @@ public class SpaceshipController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space) && canShoot)
         {
             SpawnBullet(); 
+            
         }
 
         if (hitponts <= 0)
@@ -43,13 +44,7 @@ public class SpaceshipController : MonoBehaviour
             GameOverScreen.SetActive(true);
             hitponts = 0;
         }
-        /*OnGameClear();
-        if (isGameClear && hitponts > 0)
-        {
-
-            isGameClear = false;
-
-        }*/
+       
     }
 
     private void FixedUpdate()
@@ -64,11 +59,26 @@ public class SpaceshipController : MonoBehaviour
 
     public void SpawnBullet()
     {
-        //Instantiate to clone a game object
-        GameObject bullet = Instantiate(bulletPrefab, BulletSpawnHere.position, Quaternion.identity);
-        Rigidbody2D bulletRb = bullet.GetComponent<Rigidbody2D>();
-        bulletRb.linearVelocity = new Vector2(0f, BulletSpeed);
+        
+        if (SpaceShooterManager.bulletPool.CountActive == SpaceShooterManager.maxBullets)
+        {
+            StartCoroutine("WaitForReload");
+        }
+        else
+        {
+            
+            GameObject bulletPool = SpaceShooterManager.bulletPool.Get();
+            bulletPool.transform.position = BulletSpawnHere.position;
+            Rigidbody2D bulletRb = bulletPool.GetComponent<Rigidbody2D>();
+            bulletRb.linearVelocity = new Vector2(0f, BulletSpeed);
+            
+        }
 
+    }
+    
+    IEnumerator WaitForReload()
+    {
+        yield return new WaitUntil(() => SpaceShooterManager.bulletPool.CountInactive == SpaceShooterManager.defaultCapacityBullets);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -76,7 +86,7 @@ public class SpaceshipController : MonoBehaviour
         if (collision.CompareTag("EnemyBullet"))
         {
             hitponts--;
-            Destroy(collision.gameObject);
+            
         }
     }
 

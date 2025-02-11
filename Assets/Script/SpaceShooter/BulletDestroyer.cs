@@ -4,16 +4,14 @@ using UnityEngine;
 
 public class BulletDestroyer : MonoBehaviour
 {
+    SpaceShooterManager manager;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Bullet"))
+        if (collision.CompareTag("Enemy") || collision.CompareTag("Wall"))
         {
-            Destroy(collision.gameObject);
+           FindAnyObjectByType<SpaceShooterManager>().ReturnBullets(gameObject);
         }
-        if (collision.CompareTag("EnemyBullet"))
-        {
-            Destroy(collision.gameObject);
-        }
+        
     }
 }

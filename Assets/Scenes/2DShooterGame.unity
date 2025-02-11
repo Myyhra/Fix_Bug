@@ -13,7 +13,7 @@ OcclusionCullingSettings:
 --- !u!104 &2
 RenderSettings:
   m_ObjectHideFlags: 0
-  serializedVersion: 9
+  serializedVersion: 10
   m_Fog: 0
   m_FogColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   m_FogMode: 3
@@ -38,13 +38,12 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
-  serializedVersion: 12
-  m_GIWorkflowMode: 1
+  serializedVersion: 13
+  m_BakeOnSceneLoad: 0
   m_GISettings:
     serializedVersion: 2
     m_BounceScale: 1
@@ -67,9 +66,6 @@ LightmapSettings:
     m_LightmapParameters: {fileID: 0}
     m_LightmapsBakeMode: 1
     m_TextureCompression: 1
-    m_FinalGather: 0
-    m_FinalGatherFiltering: 1
-    m_FinalGatherRayCount: 256
     m_ReflectionCompression: 2
     m_MixedBakeMode: 2
     m_BakeBackend: 1
@@ -132,9 +128,17 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 211007816819132872, guid: 1bc260f5662f70f45a8db6df1f1203da, type: 3}
+      propertyPath: pooler
+      value: 
+      objectReference: {fileID: 1289917768}
+    - target: {fileID: 211007816819132872, guid: 1bc260f5662f70f45a8db6df1f1203da, type: 3}
       propertyPath: SpaceShip
       value: 
       objectReference: {fileID: 2128575072}
+    - target: {fileID: 211007816819132872, guid: 1bc260f5662f70f45a8db6df1f1203da, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 211007816819132872, guid: 1bc260f5662f70f45a8db6df1f1203da, type: 3}
       propertyPath: moveSpeed
       value: 20
@@ -192,6 +196,41 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1bc260f5662f70f45a8db6df1f1203da, type: 3}
+--- !u!1 &28855465
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 28855466}
+  m_Layer: 0
+  m_Name: Walls
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &28855466
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 28855465}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -3.79, y: -1.9532506, z: 2.2178054}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1783248024}
+  - {fileID: 702603991}
+  - {fileID: 789824248}
+  - {fileID: 1599529589}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &38156281
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -201,9 +240,17 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 211007816819132872, guid: 1bc260f5662f70f45a8db6df1f1203da, type: 3}
+      propertyPath: pooler
+      value: 
+      objectReference: {fileID: 1289917768}
+    - target: {fileID: 211007816819132872, guid: 1bc260f5662f70f45a8db6df1f1203da, type: 3}
       propertyPath: SpaceShip
       value: 
       objectReference: {fileID: 2128575072}
+    - target: {fileID: 211007816819132872, guid: 1bc260f5662f70f45a8db6df1f1203da, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 211007816819132872, guid: 1bc260f5662f70f45a8db6df1f1203da, type: 3}
       propertyPath: moveSpeed
       value: 20
@@ -272,6 +319,7 @@ GameObject:
   - component: {fileID: 70465590}
   - component: {fileID: 70465589}
   - component: {fileID: 70465588}
+  - component: {fileID: 70465591}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -353,6 +401,22 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &70465591
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 70465587}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc6f11eaa74250e4c89ef9c5940c8d94, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletPrefab: {fileID: 5208581697367532073, guid: 10a1a6ab23ff80e479d173a66d64668f, type: 3}
+  collectionCheck: 0
+  defaultCapacityBullets: 2
+  maxBullets: 5
 --- !u!1001 &79341371
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -362,9 +426,17 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 211007816819132872, guid: 1bc260f5662f70f45a8db6df1f1203da, type: 3}
+      propertyPath: pooler
+      value: 
+      objectReference: {fileID: 1289917768}
+    - target: {fileID: 211007816819132872, guid: 1bc260f5662f70f45a8db6df1f1203da, type: 3}
       propertyPath: SpaceShip
       value: 
       objectReference: {fileID: 2128575072}
+    - target: {fileID: 211007816819132872, guid: 1bc260f5662f70f45a8db6df1f1203da, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 211007816819132872, guid: 1bc260f5662f70f45a8db6df1f1203da, type: 3}
       propertyPath: moveSpeed
       value: 20
@@ -518,9 +590,17 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 211007816819132872, guid: 1bc260f5662f70f45a8db6df1f1203da, type: 3}
+      propertyPath: pooler
+      value: 
+      objectReference: {fileID: 1289917768}
+    - target: {fileID: 211007816819132872, guid: 1bc260f5662f70f45a8db6df1f1203da, type: 3}
       propertyPath: SpaceShip
       value: 
       objectReference: {fileID: 2128575072}
+    - target: {fileID: 211007816819132872, guid: 1bc260f5662f70f45a8db6df1f1203da, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 211007816819132872, guid: 1bc260f5662f70f45a8db6df1f1203da, type: 3}
       propertyPath: moveSpeed
       value: 20
@@ -841,9 +921,17 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 211007816819132872, guid: 1bc260f5662f70f45a8db6df1f1203da, type: 3}
+      propertyPath: pooler
+      value: 
+      objectReference: {fileID: 1289917768}
+    - target: {fileID: 211007816819132872, guid: 1bc260f5662f70f45a8db6df1f1203da, type: 3}
       propertyPath: SpaceShip
       value: 
       objectReference: {fileID: 2128575072}
+    - target: {fileID: 211007816819132872, guid: 1bc260f5662f70f45a8db6df1f1203da, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 211007816819132872, guid: 1bc260f5662f70f45a8db6df1f1203da, type: 3}
       propertyPath: moveSpeed
       value: 20
@@ -910,9 +998,17 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 211007816819132872, guid: 1bc260f5662f70f45a8db6df1f1203da, type: 3}
+      propertyPath: pooler
+      value: 
+      objectReference: {fileID: 1289917768}
+    - target: {fileID: 211007816819132872, guid: 1bc260f5662f70f45a8db6df1f1203da, type: 3}
       propertyPath: SpaceShip
       value: 
       objectReference: {fileID: 2128575072}
+    - target: {fileID: 211007816819132872, guid: 1bc260f5662f70f45a8db6df1f1203da, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 211007816819132872, guid: 1bc260f5662f70f45a8db6df1f1203da, type: 3}
       propertyPath: moveSpeed
       value: 20
@@ -1109,10 +1205,9 @@ GameObject:
   m_Component:
   - component: {fileID: 702603991}
   - component: {fileID: 702603990}
-  - component: {fileID: 702603992}
   m_Layer: 0
   m_Name: UpWall
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1125,6 +1220,7 @@ BoxCollider2D:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 702603989}
   m_Enabled: 1
+  serializedVersion: 3
   m_Density: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -1148,7 +1244,8 @@ BoxCollider2D:
     m_Bits: 4294967295
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_UsedByComposite: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
   m_Offset: {x: 0, y: 2.9636788}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
@@ -1159,7 +1256,6 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  serializedVersion: 2
   m_Size: {x: 1, y: 13.381215}
   m_EdgeRadius: 0
 --- !u!4 &702603991
@@ -1171,24 +1267,12 @@ Transform:
   m_GameObject: {fileID: 702603989}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0.70710576, w: 0.70710784}
-  m_LocalPosition: {x: -3.54, y: 8.1, z: 2.2178054}
+  m_LocalPosition: {x: 0.25, y: 10.053251, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 28855466}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
---- !u!114 &702603992
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 702603989}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 294f1c93c379c5640a008fafca350eb6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &732708241
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1198,9 +1282,17 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 211007816819132872, guid: 1bc260f5662f70f45a8db6df1f1203da, type: 3}
+      propertyPath: pooler
+      value: 
+      objectReference: {fileID: 1289917768}
+    - target: {fileID: 211007816819132872, guid: 1bc260f5662f70f45a8db6df1f1203da, type: 3}
       propertyPath: SpaceShip
       value: 
       objectReference: {fileID: 2128575072}
+    - target: {fileID: 211007816819132872, guid: 1bc260f5662f70f45a8db6df1f1203da, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 211007816819132872, guid: 1bc260f5662f70f45a8db6df1f1203da, type: 3}
       propertyPath: moveSpeed
       value: 20
@@ -1279,26 +1371,13 @@ GameObject:
   m_Component:
   - component: {fileID: 789824248}
   - component: {fileID: 789824247}
-  - component: {fileID: 789824246}
   m_Layer: 0
   m_Name: DownWall
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &789824246
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 789824245}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 294f1c93c379c5640a008fafca350eb6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!61 &789824247
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1307,6 +1386,7 @@ BoxCollider2D:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 789824245}
   m_Enabled: 1
+  serializedVersion: 3
   m_Density: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -1330,7 +1410,8 @@ BoxCollider2D:
     m_Bits: 4294967295
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_UsedByComposite: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
   m_Offset: {x: 0, y: 2.9636788}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
@@ -1341,7 +1422,6 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  serializedVersion: 2
   m_Size: {x: 1, y: 13.381215}
   m_EdgeRadius: 0
 --- !u!4 &789824248
@@ -1353,11 +1433,11 @@ Transform:
   m_GameObject: {fileID: 789824245}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0.70710576, w: 0.70710784}
-  m_LocalPosition: {x: -3.54, y: -6.51, z: 2.2178054}
+  m_LocalPosition: {x: 0.25, y: -4.5567493, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 28855466}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
 --- !u!1001 &791723394
 PrefabInstance:
@@ -1368,9 +1448,17 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 211007816819132872, guid: 1bc260f5662f70f45a8db6df1f1203da, type: 3}
+      propertyPath: pooler
+      value: 
+      objectReference: {fileID: 1289917768}
+    - target: {fileID: 211007816819132872, guid: 1bc260f5662f70f45a8db6df1f1203da, type: 3}
       propertyPath: SpaceShip
       value: 
       objectReference: {fileID: 2128575072}
+    - target: {fileID: 211007816819132872, guid: 1bc260f5662f70f45a8db6df1f1203da, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 211007816819132872, guid: 1bc260f5662f70f45a8db6df1f1203da, type: 3}
       propertyPath: moveSpeed
       value: 20
@@ -1437,9 +1525,17 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 211007816819132872, guid: 1bc260f5662f70f45a8db6df1f1203da, type: 3}
+      propertyPath: pooler
+      value: 
+      objectReference: {fileID: 1289917768}
+    - target: {fileID: 211007816819132872, guid: 1bc260f5662f70f45a8db6df1f1203da, type: 3}
       propertyPath: SpaceShip
       value: 
       objectReference: {fileID: 2128575072}
+    - target: {fileID: 211007816819132872, guid: 1bc260f5662f70f45a8db6df1f1203da, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 211007816819132872, guid: 1bc260f5662f70f45a8db6df1f1203da, type: 3}
       propertyPath: moveSpeed
       value: 20
@@ -1608,15 +1704,17 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
+  m_TextWrappingMode: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1
+  m_ActiveFontFeatures: 6e72656b
   m_enableExtraPadding: 0
   checkPaddingRequired: 0
   m_isRichText: 1
+  m_EmojiFallbackSupport: 1
   m_parseCtrlCharacters: 1
   m_isOrthographic: 1
   m_isCullingEnabled: 0
@@ -1678,9 +1776,8 @@ Light:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1228352975}
   m_Enabled: 1
-  serializedVersion: 10
+  serializedVersion: 11
   m_Type: 1
-  m_Shape: 0
   m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
   m_Intensity: 1
   m_Range: 10
@@ -1730,8 +1827,12 @@ Light:
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
   m_UseViewFrustumForShadowCasterCull: 1
+  m_ForceVisible: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+  m_LightUnit: 1
+  m_LuxAtDistance: 1
+  m_EnableSpotReflector: 1
 --- !u!4 &1228352977
 Transform:
   m_ObjectHideFlags: 0
@@ -1858,15 +1959,17 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
+  m_TextWrappingMode: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1
+  m_ActiveFontFeatures: 00000000
   m_enableExtraPadding: 0
   checkPaddingRequired: 0
   m_isRichText: 1
+  m_EmojiFallbackSupport: 1
   m_parseCtrlCharacters: 1
   m_isOrthographic: 1
   m_isCullingEnabled: 0
@@ -1901,9 +2004,17 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 211007816819132872, guid: 1bc260f5662f70f45a8db6df1f1203da, type: 3}
+      propertyPath: pooler
+      value: 
+      objectReference: {fileID: 1289917768}
+    - target: {fileID: 211007816819132872, guid: 1bc260f5662f70f45a8db6df1f1203da, type: 3}
       propertyPath: SpaceShip
       value: 
       objectReference: {fileID: 2128575072}
+    - target: {fileID: 211007816819132872, guid: 1bc260f5662f70f45a8db6df1f1203da, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 211007816819132872, guid: 1bc260f5662f70f45a8db6df1f1203da, type: 3}
       propertyPath: moveSpeed
       value: 20
@@ -1970,9 +2081,17 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 211007816819132872, guid: 1bc260f5662f70f45a8db6df1f1203da, type: 3}
+      propertyPath: pooler
+      value: 
+      objectReference: {fileID: 1289917768}
+    - target: {fileID: 211007816819132872, guid: 1bc260f5662f70f45a8db6df1f1203da, type: 3}
       propertyPath: SpaceShip
       value: 
       objectReference: {fileID: 2128575072}
+    - target: {fileID: 211007816819132872, guid: 1bc260f5662f70f45a8db6df1f1203da, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 211007816819132872, guid: 1bc260f5662f70f45a8db6df1f1203da, type: 3}
       propertyPath: moveSpeed
       value: 20
@@ -2030,6 +2149,54 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1bc260f5662f70f45a8db6df1f1203da, type: 3}
+--- !u!1 &1289917765
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1289917767}
+  - component: {fileID: 1289917768}
+  m_Layer: 0
+  m_Name: EnemyObjectPooler
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1289917767
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1289917765}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.0376298, y: -1.6969237, z: 17.389248}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1289917768
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1289917765}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 911e696acea8f5444bceb5ac6283b308, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletPrefab: {fileID: 1899422007795365255, guid: f726dfe23e8ad5842be1f15f65934200, type: 3}
+  collectionCheck: 1
+  defaultCapacityBullets: 1
+  maxBullets: 3
 --- !u!1001 &1302312110
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2039,9 +2206,17 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 211007816819132872, guid: 1bc260f5662f70f45a8db6df1f1203da, type: 3}
+      propertyPath: pooler
+      value: 
+      objectReference: {fileID: 1289917768}
+    - target: {fileID: 211007816819132872, guid: 1bc260f5662f70f45a8db6df1f1203da, type: 3}
       propertyPath: SpaceShip
       value: 
       objectReference: {fileID: 2128575072}
+    - target: {fileID: 211007816819132872, guid: 1bc260f5662f70f45a8db6df1f1203da, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 211007816819132872, guid: 1bc260f5662f70f45a8db6df1f1203da, type: 3}
       propertyPath: moveSpeed
       value: 20
@@ -2210,15 +2385,17 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
+  m_TextWrappingMode: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1
+  m_ActiveFontFeatures: 6e72656b
   m_enableExtraPadding: 0
   checkPaddingRequired: 0
   m_isRichText: 1
+  m_EmojiFallbackSupport: 1
   m_parseCtrlCharacters: 1
   m_isOrthographic: 1
   m_isCullingEnabled: 0
@@ -2515,6 +2692,7 @@ BoxCollider2D:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1599529587}
   m_Enabled: 1
+  serializedVersion: 3
   m_Density: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -2538,7 +2716,8 @@ BoxCollider2D:
     m_Bits: 4294967295
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_UsedByComposite: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
   m_Offset: {x: 0, y: 2.981532}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
@@ -2549,7 +2728,6 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  serializedVersion: 2
   m_Size: {x: 1, y: 13.249704}
   m_EdgeRadius: 0
 --- !u!4 &1599529589
@@ -2560,12 +2738,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1599529587}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.82, y: -1.9532506, z: 2.2178054}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 7.6099997, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 28855466}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1708869830
 GameObject:
@@ -2667,15 +2845,17 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
+  m_TextWrappingMode: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1
+  m_ActiveFontFeatures: 6e72656b
   m_enableExtraPadding: 0
   checkPaddingRequired: 0
   m_isRichText: 1
+  m_EmojiFallbackSupport: 1
   m_parseCtrlCharacters: 1
   m_isOrthographic: 1
   m_isCullingEnabled: 0
@@ -2748,6 +2928,7 @@ BoxCollider2D:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1783248022}
   m_Enabled: 1
+  serializedVersion: 3
   m_Density: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -2771,7 +2952,8 @@ BoxCollider2D:
     m_Bits: 4294967295
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_UsedByComposite: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
   m_Offset: {x: 0, y: 2.9636788}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
@@ -2782,7 +2964,6 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  serializedVersion: 2
   m_Size: {x: 1, y: 13.381215}
   m_EdgeRadius: 0
 --- !u!4 &1783248024
@@ -2793,12 +2974,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1783248022}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.79, y: -1.9532506, z: 2.2178054}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 28855466}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1874668804
 PrefabInstance:
@@ -2809,9 +2990,17 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 211007816819132872, guid: 1bc260f5662f70f45a8db6df1f1203da, type: 3}
+      propertyPath: pooler
+      value: 
+      objectReference: {fileID: 1289917768}
+    - target: {fileID: 211007816819132872, guid: 1bc260f5662f70f45a8db6df1f1203da, type: 3}
       propertyPath: SpaceShip
       value: 
       objectReference: {fileID: 2128575072}
+    - target: {fileID: 211007816819132872, guid: 1bc260f5662f70f45a8db6df1f1203da, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 211007816819132872, guid: 1bc260f5662f70f45a8db6df1f1203da, type: 3}
       propertyPath: moveSpeed
       value: 20
@@ -2980,15 +3169,17 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
+  m_TextWrappingMode: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1
+  m_ActiveFontFeatures: 6e72656b
   m_enableExtraPadding: 0
   checkPaddingRequired: 0
   m_isRichText: 1
+  m_EmojiFallbackSupport: 1
   m_parseCtrlCharacters: 1
   m_isOrthographic: 1
   m_isCullingEnabled: 0
@@ -3276,15 +3467,17 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
+  m_TextWrappingMode: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1
+  m_ActiveFontFeatures: 00000000
   m_enableExtraPadding: 0
   checkPaddingRequired: 0
   m_isRichText: 1
+  m_EmojiFallbackSupport: 1
   m_parseCtrlCharacters: 1
   m_isOrthographic: 1
   m_isCullingEnabled: 0
@@ -3325,7 +3518,7 @@ GameObject:
   - component: {fileID: 2128575073}
   m_Layer: 5
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3347,6 +3540,9 @@ SpriteRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
   m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -3406,6 +3602,7 @@ CircleCollider2D:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2128575068}
   m_Enabled: 1
+  serializedVersion: 3
   m_Density: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -3429,9 +3626,9 @@ CircleCollider2D:
     m_Bits: 4294967295
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_UsedByComposite: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
   m_Radius: 0.56
 --- !u!114 &2128575072
 MonoBehaviour:
@@ -3471,9 +3668,10 @@ MonoBehaviour:
   score: 0
   hitponts: 10
   GameOverScreen: {fileID: 2031666314}
+  SpaceShooterManager: {fileID: 70465591}
 --- !u!50 &2128575073
 Rigidbody2D:
-  serializedVersion: 4
+  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -3484,8 +3682,8 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -3497,7 +3695,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 2
 --- !u!1001 &2128761888
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3507,9 +3705,17 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 211007816819132872, guid: 1bc260f5662f70f45a8db6df1f1203da, type: 3}
+      propertyPath: pooler
+      value: 
+      objectReference: {fileID: 1289917768}
+    - target: {fileID: 211007816819132872, guid: 1bc260f5662f70f45a8db6df1f1203da, type: 3}
       propertyPath: SpaceShip
       value: 
       objectReference: {fileID: 2128575072}
+    - target: {fileID: 211007816819132872, guid: 1bc260f5662f70f45a8db6df1f1203da, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 211007816819132872, guid: 1bc260f5662f70f45a8db6df1f1203da, type: 3}
       propertyPath: moveSpeed
       value: 20
@@ -3576,9 +3782,17 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 211007816819132872, guid: 1bc260f5662f70f45a8db6df1f1203da, type: 3}
+      propertyPath: pooler
+      value: 
+      objectReference: {fileID: 1289917768}
+    - target: {fileID: 211007816819132872, guid: 1bc260f5662f70f45a8db6df1f1203da, type: 3}
       propertyPath: SpaceShip
       value: 
       objectReference: {fileID: 2128575072}
+    - target: {fileID: 211007816819132872, guid: 1bc260f5662f70f45a8db6df1f1203da, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 211007816819132872, guid: 1bc260f5662f70f45a8db6df1f1203da, type: 3}
       propertyPath: moveSpeed
       value: 20
@@ -3640,14 +3854,12 @@ PrefabInstance:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
-  - {fileID: 70465590}
   - {fileID: 1228352977}
+  - {fileID: 70465590}
   - {fileID: 2128575070}
   - {fileID: 212817491}
-  - {fileID: 1783248024}
-  - {fileID: 702603991}
-  - {fileID: 789824248}
-  - {fileID: 1599529589}
+  - {fileID: 28855466}
+  - {fileID: 1289917767}
   - {fileID: 7149630954067416855}
   - {fileID: 732708241}
   - {fileID: 22695061}

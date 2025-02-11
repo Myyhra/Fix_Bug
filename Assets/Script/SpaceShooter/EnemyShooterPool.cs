@@ -1,17 +1,13 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using TMPro;
 using UnityEngine.Pool;
 
-public class SpaceShooterManager : MonoBehaviour
+public class EnemyShooterPool : MonoBehaviour
 {
-    
     public GameObject bulletPrefab;
     public ObjectPool<GameObject> bulletPool;
     public bool collectionCheck = false;
-    public int defaultCapacityBullets = 3;
-    public int maxBullets = 6;
+    public int defaultCapacityBullets = 1;
+    public int maxBullets = 3;
     // public Transform BulletSpawnHere;
     
     void Start()
@@ -53,5 +49,4 @@ public class SpaceShooterManager : MonoBehaviour
     {
         bulletPool.Release(bullet);
     }
-   
 }
